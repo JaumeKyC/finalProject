@@ -2,17 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Main } from '../interface/api-response';
 import { Observable } from 'rxjs';
-
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor(public http: HttpClient) { }
-  private apiKey = 'demo'
-  public symbol = ''; //The next step is to pick up the symbol from the component. Because if you want to see 20 or 40 different stocks, this page will have a lot of code, instead of that, I will try to get this stocks information in the components.
+  
 
+  constructor(public http: HttpClient) { 
+    
+  }
+  private apiKey = environment.API_KEY;
+ 
   private shortUrl = 'https://www.alphavantage.co/query'
   public getApiResponse(symbol: string): Observable <Main> { 
 
