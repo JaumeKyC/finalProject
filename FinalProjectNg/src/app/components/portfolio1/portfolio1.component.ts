@@ -23,6 +23,10 @@ export class Portfolio1Component {
   public volume: string = "";
   public msft: string = "MSFT";
 
+
+  public reportedPrices: number[] = [239.82, 308.90, 118.88, 156.88, 239.56];
+
+
   public constructor(public service: DataService) {
 
   }

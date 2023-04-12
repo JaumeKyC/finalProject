@@ -6,11 +6,21 @@
     background-image: url("../../../assets/img/bannerImg.jpg");
     background-size: 100%;
 }
+.navbar-collapse {
+    flex-grow: 0!important;
+    align-items: center!important;
+}
+
+.navbar {
+    border-radius: 50px;
+    backdrop-filter: blur(5px) saturate(50%)!important;
+    background-color: rgba(255, 255, 255, 0.3)!important; /* agregar transparencia al fondo blanco */
+  }
 
 .navbarPosition{
     position: absolute;
     top: 5%;
-    width: 80%;
+    width: 30%;
     
 }
 
@@ -33,11 +43,49 @@
     height: 100%;
   }
   
-.itemAlignment{
-    margin-left:39%; 
-    margin-right:61%;
+/* .itemAlignment{
+    margin-left:50%; 
+    margin-right:%;
+} */
+
+@media (max-width: 1360px) { 
+    .navbarPosition{
+        position: absolute;
+        top: 5%;
+        width: 40%;
+        
+    }
+    /* .itemAlignment{
+    margin-left:17%; 
+    margin-right:83%;
+} */
 }
+
+@media (max-width: 1290px) { 
+    .navbarPosition{
+        position: absolute;
+        top: 5%;
+        width: 40%;
+        
+    }
+   /*  .itemAlignment{
+    margin-left:20%; 
+    margin-right:80%;
+} */
+}
+
+
 @media (max-width: 992px) { 
+    .navbarPosition{
+        position: absolute;
+        top: 5%;
+        width: 40%;
+        
+    }
+    /* .itemAlignment{
+    margin-left:20%; 
+    margin-right:80%;
+} */
 
     .textPosition{
         position: absolute;
@@ -50,16 +98,59 @@
 
 }
 
+
+@media (max-width: 850px) { 
+    .navbarPosition{
+        position: absolute;
+        top: 5%;
+        width: 40%;
+        
+    }
+    /* .itemAlignment{
+    margin-left:12%; 
+    margin-right:88%;
+} */
+
+
+}
+
 @media (max-width: 768px) { 
-    .itemAlignment{
+
+    
+        .navbar-nav.itemAlignment {
+          display: flex;
+          flex-direction: column;
+        }
+      
+        .navbar-brand {
+          order: -1;
+        }
+      
+        .nav-link:first-child {
+          order: 1;
+        }
+      
+        .nav-link:last-child {
+          order: 2;
+        }
+      
+
+
+    
+   /*  .itemAlignment{
         margin-left:0%; 
         margin-right:0%;
-    }
+    } */
     
     .navbarPosition{
         top:0%;
         width:100%;
     }
+    .navbar {
+        border-radius: 0px;
+        backdrop-filter: blur(5px) saturate(50%)!important;
+        background-color: rgba(255, 255, 255, 0.3)!important; /* agregar transparencia al fondo blanco */
+      }
 
     .textPosition{
         position: absolute;

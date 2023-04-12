@@ -26,10 +26,6 @@
    </div>
 </div>
 
-
-
-
-
 <div *ngIf="allStockInfo">
    <div class="table-responsive padLTable padR padROthers">
       <table class="table">
@@ -58,7 +54,7 @@
                <td>${{ objectValues(allStockInfo)[0]['1. open'] }} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="border-radius: 50%;" class="bi bg-danger bi-arrow-down-right-circle" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768L5.854 5.146z"/>
                 </svg></td>
-               <td>$291.55</td>
+               <td>${{reportedPrices[0]}}</td>
                <td>@mdo</td>
             </tr>
             <tr class="d-sm-table-row d-md-none">
@@ -74,7 +70,7 @@
                <td>${{ objectValues(allStockInfo)[0]['1. open'] }} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="border-radius: 50%;" class="bi bg-success bi-arrow-up-right-circle" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
                 </svg></td>
-               <td>$312.52</td>
+               <td>${{reportedPrices[1]}}</td>
                <td>@mdo</td>
             </tr>
             <tr class="d-sm-table-row d-md-none">
@@ -88,7 +84,7 @@
                <td>adasdsad</td>
                <td>18.24</td>
                <td>asds</td>
-               <td>$118.48</td>
+               <td>${{reportedPrices[2]}}</td>
                <td>@mdo</td>
             </tr>
             <tr class="d-sm-table-row d-md-none">
@@ -103,7 +99,7 @@
                <td>Canadian National Railway Co</td>
                <td>15.47</td>
                <td>@mdo</td>
-               <td>$163.68</td>
+               <td>${{reportedPrices[3]}}</td>
                <td>@mdo</td>
             </tr>
             <tr class="d-sm-table-row d-md-none">
@@ -117,7 +113,7 @@
                <td>Canadian National Railway Co</td>
                <td>4.93</td>
                <td>@mdo</td>
-               <td>$209.17</td>
+               <td>${{reportedPrices[4]}}</td>
                <td>asd</td>
             </tr>
             <tr class="d-sm-table-row d-md-none">
