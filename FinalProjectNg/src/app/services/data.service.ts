@@ -9,8 +9,6 @@ import { environment } from "../../environments/environment";
 })
 export class DataService {
 
-  
-
   constructor(public http: HttpClient) { 
     
   }

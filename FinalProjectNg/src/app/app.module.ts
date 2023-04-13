@@ -7,6 +7,9 @@ import { Portfolio1Component } from './components/portfolio1/portfolio1.componen
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Portfolio2Component } from './components/portfolio2/portfolio2.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StatsComponent } from './components/stats/stats.component';
+import { NewsComponent } from './components/news/news.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -15,6 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     Portfolio1Component,
     Portfolio2Component,
+    StatsComponent,
+    NewsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
