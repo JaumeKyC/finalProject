@@ -16,7 +16,7 @@ export class DataService {
  
   private shortUrl = 'https://www.alphavantage.co/query'
   public getApiResponse(symbol: string): Observable <Main> { 
-
+    /* WEEKLY https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=TSCO.LON&apikey=demo */
     const urlIntraday5Mins = `${this.shortUrl}?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=5min&apikey=${this.apiKey}`;
     return this.http.get<Main>(urlIntraday5Mins);
    

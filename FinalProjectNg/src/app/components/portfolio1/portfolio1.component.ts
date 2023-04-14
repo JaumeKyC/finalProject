@@ -19,10 +19,18 @@ export class Portfolio1Component {
     "5. Output Size": "",
     "6. Time Zone": ""
   };
-  public ibm: string = "IBM";
-  public volume: string = "";
-  public msft: string = "MSFT";
 
+
+  public msft: string = "MSFT";
+  public lastPriceBRKB: string = "";
+  public brkB: string = "BRK-B";
+  public lastPriceMSFT : string = "";
+  public cni: string = "CNI";
+  public lastPriceCNI : string = "";
+  public wm: string = "WM";
+  public lastPriceWM : string = "";
+  public cat: string = "CAT";
+  public lastPriceCAT : string = "";
 
   public reportedPrices: number[] = [239.82, 308.91, 118.88, 156.88, 239.56];
 
@@ -31,25 +39,55 @@ export class Portfolio1Component {
 
   }
 
-  public getResponseIBM(): void {
-    this.service.getApiResponse(`${this.ibm}`).subscribe(response => {
-      this.allStockInfo = response['Time Series (5min)'];
-      //this.volume = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['5. volume'];
-      
-    })
-  }
   public getResponseMSFT(): void {
     this.service.getApiResponse(`${this.msft}`).subscribe(response => {
       this.allStockInfo = response['Time Series (5min)'];
       this.generalInfo = response['Meta Data'];
+      this.lastPriceMSFT = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
       
+    })
+  }
+
+   public getResponseBRKB(): void {
+    this.service.getApiResponse(`${this.brkB}`).subscribe(response => {
+      this.allStockInfo = response['Time Series (5min)'];
+      this.generalInfo = response['Meta Data'];
+      this.lastPriceBRKB = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
+    })
+  }
+
+  public getResponseCNI(): void {
+    this.service.getApiResponse(`${this.cni}`).subscribe(response => {
+      this.allStockInfo = response['Time Series (5min)'];
+      this.generalInfo = response['Meta Data'];
+      this.lastPriceCNI = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
+    })
+  }
+
+  
+  public getResponseWM(): void {
+    this.service.getApiResponse(`${this.wm}`).subscribe(response => {
+      this.allStockInfo = response['Time Series (5min)'];
+      this.generalInfo = response['Meta Data'];
+      this.lastPriceWM = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
+    })
+  }
+
+  public getResponseCAT(): void {
+    this.service.getApiResponse(`${this.cat}`).subscribe(response => {
+      this.allStockInfo = response['Time Series (5min)'];
+      this.generalInfo = response['Meta Data'];
+      this.lastPriceCAT = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
     })
   }
   
 
   public ngOnInit(): void {
-    this.getResponseIBM();
     this.getResponseMSFT();
+    this.getResponseBRKB();
+    this.getResponseCNI();
+    this.getResponseWM();
+    this.getResponseCAT();
   }
 
 }
