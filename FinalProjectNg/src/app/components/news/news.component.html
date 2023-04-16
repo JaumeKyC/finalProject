@@ -1,1 +1,6 @@
-<p>news works!</p>
+<div class="container">
+
+    <div class="row">
+            <div *ngFor="let new of dataNews" class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mt-4"><app-new1 [new]="new"></app-new1></div>
+    </div>
+</div>
