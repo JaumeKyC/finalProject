@@ -26,113 +26,116 @@
    </div>
 </div>
 
-<div *ngIf="allStockInfo">
-   <div class="table-responsive padLTable padR padROthers">
-      <table class="table">
-         <thead>
-            <tr class="d-none d-md-table-row">
-               <th scope="col">#</th>
-               <th scope="col">Name</th>
-               <th scope="col">% of Portfolio</th>
-               <th scope="col">Current Price</th>
-               <th scope="col">Reported Price</th>
-               <th scope="col">Earned</th>
-            </tr>
-            <tr class="d-sm-table-row d-md-none">
-               <th scope="col">#</th>
-               <th scope="col">Symbol</th>
-               <th scope="col">% of Portfolio</th>
-               <th scope="col">Current Price</th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr class="d-none d-md-table-row">
-               <th scope="row">1</th>
-               <td>Microsoft Corp.</td>
-               <td>26.36</td>
-               <!-- Use it to change the numbers of decimals, const openPrice = parseFloat(objectValues(allStockInfo)[0]['1. open']).toFixed(2); -->
-               <td>${{ lastPriceMSFT }} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="border-radius: 50%;" class="bi bg-danger bi-arrow-down-right-circle" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768L5.854 5.146z"/>
-                </svg></td>
-               <td>${{reportedPrices[0]}}</td>
-               <td>@mdo</td>
-            </tr>
-            <tr class="d-sm-table-row d-md-none">
-               <th scope="row">1</th>
-               <td>MSFT</td>
-               <td>26.36</td>
-               <td>@mdo</td>
-            </tr>
-            <tr class="d-none d-md-table-row">
-               <th scope="row">2</th>
-               <td>Berkshire Hathaway CL B</td>
-               <td>21.35</td>
-               <td>${{ lastPriceBRKB }} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="border-radius: 50%;" class="bi bg-success bi-arrow-up-right-circle" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
-                </svg></td>
-               <td>${{reportedPrices[1]}}</td>
-               <td>@mdo</td>
-            </tr>
-            <tr class="d-sm-table-row d-md-none">
-               <th scope="row">2</th>
-               <td>BRK-B</td>
-               <td>21.35</td>
-               <td>@fat</td>
-            </tr>
-            <tr class="d-none d-md-table-row">
-               <th scope="row">3</th>
-               <td>Canadian Natl Railway Co.</td>
-               <td>18.24</td>
-               <td>${{ lastPriceCNI }}</td>
-               <td>${{reportedPrices[2]}}</td>
-               <td>@mdo</td>
-            </tr>
-            <tr class="d-sm-table-row d-md-none">
-               <th scope="row">3</th>
-               <td>CNI</td>
-               <td>18.24</td>
-               <td>@twitter</td>
+<div class="table-responsive padLTable padR padROthers">
+   <table class="table">
+      <thead>
+         <tr class="d-none d-md-table-row">
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">% of Portfolio</th>
+            <th scope="col">Current Price</th>
+            <th scope="col">Reported Price</th>
+            <th scope="col">Earned</th>
+         </tr>
+         <tr class="d-sm-table-row d-md-none">
+            <th scope="col">#</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">% of Portfolio</th>
+            <th scope="col">Current Price</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr class="d-none d-md-table-row">
+            <th scope="row">1</th>
+            <td>Microsoft Corp.</td>
+            <td>26.36</td>
+            <!-- Use it to change the numbers of decimals, const openPrice = parseFloat(objectValues(allStockInfo)[0]['1. open']).toFixed(2); -->
+            <td>${{ lastPriceMSFT }} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  style="border-radius: 50%;" class="bi bg-danger bi-arrow-down-right-circle" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768L5.854 5.146z" />
+               </svg></td>
+            <td>${{reportedPrices[0]}}</td>
+            <td>{{ winPercentageMSFT }}%</td>
+         </tr>
+         <tr class="d-sm-table-row d-md-none">
+            <th scope="row">1</th>
+            <td>MSFT</td>
+            <td>26.36</td>
+            <td>${{ lastPriceMSFT }}</td>
+         </tr>
+         <tr class="d-none d-md-table-row">
+            <th scope="row">2</th>
+            <td>Berkshire Hathaway CL B</td>
+            <td>21.35</td>
+            <td>${{ lastPriceBRKB }} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  style="border-radius: 50%;" class="bi bg-success bi-arrow-up-right-circle" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                     d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z" />
+               </svg></td>
+            <td>${{reportedPrices[1]}}</td>
+            <td>{{ winPercentageBRKB }}%</td>
+         </tr>
+         <tr class="d-sm-table-row d-md-none">
+            <th scope="row">2</th>
+            <td>BRK-B</td>
+            <td>21.35</td>
+            <td>${{ lastPriceBRKB }}</td>
+         </tr>
+         <tr class="d-none d-md-table-row">
+            <th scope="row">3</th>
+            <td>Canadian Natl Railway Co.</td>
+            <td>18.24</td>
+            <td>${{ lastPriceCNI }}</td>
+            <td>${{reportedPrices[2]}}</td>
+            <td>{{ winPercentageCNI }}%</td>
+         </tr>
+         <tr class="d-sm-table-row d-md-none">
+            <th scope="row">3</th>
+            <td>CNI</td>
+            <td>18.24</td>
+            <td>${{ lastPriceCNI }}</td>
 
-            </tr>
-            <tr class="d-none d-md-table-row">
-               <th scope="row">4</th>
-               <td>Waste Management Inc.</td>
-               <td>15.47</td>
-               <td>${{ lastPriceWM }}</td>
-               <td>${{reportedPrices[3]}}</td>
-               <td>@mdo</td>
-            </tr>
-            <tr class="d-sm-table-row d-md-none">
-               <th scope="row">4</th>
-               <td>WM</td>
-               <td>15.47</td>
-               <td>@mdo</td>
-            </tr>
-            <tr class="d-none d-md-table-row">
-               <th scope="row">5</th>
-               <td>Caterpillar Inc.</td>
-               <td>4.93</td>
-               <td>${{ lastPriceCAT }}</td>
-               <td>${{reportedPrices[4]}}</td>
-               <td>asd</td>
-            </tr>
-            <tr class="d-sm-table-row d-md-none">
-               <th scope="row">5</th>
-               <td>CAT</td>
-               <td>4.93</td>
-               <td>@mdo</td>
-            </tr>
-         </tbody>
-      </table>
+         </tr>
+         <tr class="d-none d-md-table-row">
+            <th scope="row">4</th>
+            <td>Waste Management Inc.</td>
+            <td>15.47</td>
+            <td>${{ lastPriceWM }}</td>
+            <td>${{reportedPrices[3]}}</td>
+            <td>{{ winPercentageWM }}%</td>
+         </tr>
+         <tr class="d-sm-table-row d-md-none">
+            <th scope="row">4</th>
+            <td>WM</td>
+            <td>15.47</td>
+            <td>${{ lastPriceWM }}</td>
+         </tr>
+         <tr class="d-none d-md-table-row">
+            <th scope="row">5</th>
+            <td>Caterpillar Inc.</td>
+            <td>4.93</td>
+            <td>${{ lastPriceCAT }}</td>
+            <td>${{reportedPrices[4]}}</td>
+            <td>{{ winPercentageCAT }}%</td>
+         </tr>
+         <tr class="d-sm-table-row d-md-none">
+            <th scope="row">5</th>
+            <td>CAT</td>
+            <td>4.93</td>
+            <td>${{ lastPriceCAT }}</td>
+         </tr>
+      </tbody>
+   </table>
 
-   </div>
-
-
+</div>
 
 
 
 
-  <!--  <h2>Stock Prices for {{ ibm }}</h2>
+
+
+<!--  <h2>Stock Prices for {{ ibm }}</h2>
    <ul>
       <li *ngFor="let info of objectValues(allStockInfo)">
          {{ info['1. open'] }}, {{ info['2. high'] }}, {{ info['3. low'] }}, {{ info['4. close'] }}, {{ info['5.
@@ -146,9 +149,3 @@
       <br>
       <li>{{volume}}</li>
    </ul> -->
-
-
-
-
-
-</div>

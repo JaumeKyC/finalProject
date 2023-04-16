@@ -48,9 +48,9 @@ export class Portfolio2Component {
   }
   
 
-  public ngOnInit(): void {
+ /*  public ngOnInit(): void {
     this.getResponseIBM();
     this.getResponseMSFT();
   }
-
+ */
 }
