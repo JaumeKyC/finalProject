@@ -13,7 +13,6 @@ export class DataService {
     
   }
   private apiKey = environment.API_KEY;
- 
   private shortUrl = 'https://www.alphavantage.co/query'
   public getApiResponse(symbol: string): Observable <Main> { 
     /* WEEKLY https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=TSCO.LON&apikey=demo */

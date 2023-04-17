@@ -44,79 +44,74 @@
           <tbody>
              <tr class="d-none d-md-table-row">
                 <th scope="row">1</th>
-                <td>Canadian National Railway Co</td>
-                <td>26.36</td>
+                <td>Apple Inc.</td>
+                <td>38.90</td>
                 <!-- Use it to change the numbers of decimals, const openPrice = parseFloat(objectValues(allStockInfo)[0]['1. open']).toFixed(2); -->
-                <td><!-- ${{ objectValues(allStockInfo)[0]['1. open'] }}  --><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="border-radius: 50%;" class="bi bg-danger bi-arrow-down-right-circle" viewBox="0 0 16 16">
-                   <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 5.146a.5.5 0 1 0-.708.708L9.243 9.95H6.475a.5.5 0 1 0 0 1h3.975a.5.5 0 0 0 .5-.5V6.475a.5.5 0 1 0-1 0v2.768L5.854 5.146z"/>
-                 </svg></td>
+                <td>${{lastPrice[0]}}</td>
                 <td>${{reportedPrices[0]}}</td>
-                <td>@mdo</td>
+                <td>{{winPercentage[0]}}%</td>
              </tr>
              <tr class="d-sm-table-row d-md-none">
                 <th scope="row">1</th>
-                <td>Canadian National Railway Co</td>
-                <td>26.36</td>
-                <td>@mdo</td>
+                <td>AAPL</td>
+                <td>38.90</td>
+                <td>${{lastPrice[0]}}</td>
              </tr>
              <tr class="d-none d-md-table-row">
                 <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>21.35</td>
-                <td>${{ <!-- objectValues(allStockInfo)[0]['1. open'] --> }} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="border-radius: 50%;" class="bi bg-success bi-arrow-up-right-circle" viewBox="0 0 16 16">
-                   <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
-                 </svg></td>
+                <td>Bank of America Corp.</td>
+                <td>11.19</td>
+                <td>${{lastPrice[1]}}</td>
                 <td>${{reportedPrices[1]}}</td>
-                <td>@mdo</td>
+                <td>{{winPercentage[1]}}%</td>
              </tr>
              <tr class="d-sm-table-row d-md-none">
                 <th scope="row">2</th>
-                <td>asdasd</td>
-                <td>21.35</td>
-                <td>@fat</td>
+                <td>BAC</td>
+                <td>11.19</td>
+                <td>${{lastPrice[1]}}</td>
              </tr>
              <tr class="d-none d-md-table-row">
                 <th scope="row">3</th>
-                <td>adasdsad</td>
-                <td>18.24</td>
-                <td>asds</td>
+                <td>Chevron Corp.</td>
+                <td>9.78</td>
+                <td>${{lastPrice[2]}}</td>
                 <td>${{reportedPrices[2]}}</td>
-                <td>@mdo</td>
+                <td>{{winPercentage[2]}}%</td>
              </tr>
              <tr class="d-sm-table-row d-md-none">
                 <th scope="row">3</th>
-                <td>adssd</td>
-                <td>18.24</td>
-                <td>@twitter</td>
- 
+                <td>CVX</td>
+                <td>9.78</td>
+                <td>${{lastPrice[2]}}</td>
              </tr>
              <tr class="d-none d-md-table-row">
                 <th scope="row">4</th>
-                <td>Canadian National Railway Co</td>
-                <td>15.47</td>
-                <td>@mdo</td>
+                <td>Coca Cola Co.</td>
+                <td>8.51</td>
+                <td>${{lastPrice[3]}}</td>
                 <td>${{reportedPrices[3]}}</td>
-                <td>@mdo</td>
+                <td>{{winPercentage[3]}}%</td>
              </tr>
              <tr class="d-sm-table-row d-md-none">
                 <th scope="row">4</th>
-                <td>Canadian National Railway Co</td>
-                <td>15.47</td>
-                <td>@mdo</td>
+                <td>CO</td>
+                <td>8.51</td>
+                <td>${{lastPrice[3]}}</td>
              </tr>
              <tr class="d-none d-md-table-row">
                 <th scope="row">5</th>
-                <td>Canadian National Railway Co</td>
-                <td>4.93</td>
-                <td>@mdo</td>
+                <td>American Express</td>
+                <td>7.49</td>
+                <td>${{lastPrice[4]}} </td>
                 <td>${{reportedPrices[4]}}</td>
-                <td>asd</td>
+                <td>{{winPercentage[4]}}%</td>
              </tr>
              <tr class="d-sm-table-row d-md-none">
                 <th scope="row">5</th>
-                <td>Canadian National Railway Co</td>
-                <td>4.93</td>
-                <td>@mdo</td>
+                <td>AXP</td>
+                <td>7.49</td>
+                <td>${{lastPrice[4]}}</td>
              </tr>
           </tbody>
        </table>
