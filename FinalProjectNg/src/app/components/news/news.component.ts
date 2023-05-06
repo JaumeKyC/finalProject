@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-news',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class NewsComponent {
 
+  public news:string[] = [];
+
+constructor(public service:DataService){}
+
+public  getNewsList():void{
+  this.service.getNewsResponse().subscribe(response => {
+    this.news = response;
+    console.log(response);
+  });
+}
 
 
   public dataNews: string[][] = 
@@ -19,4 +30,8 @@ export class NewsComponent {
 
     ["Banking crisis forces ECB","European Central Bank policymakers are reconsidering the path of interest rate hikes in light of last month’s banking turmoil, but remain committed to reining in core inflation.","https://www.cnbc.com/2023/04/14/ecb-policymakers-are-rethinking-rate-hikes-after-banking-turmoil.html","https://images.pexels.com/photos/16162419/pexels-photo-16162419.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"]
   ];
+
+  ngOnInit(){
+    this.getNewsList();
+  }
 }

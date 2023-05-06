@@ -1,0 +1,19 @@
+{
+    "name": "ProjectBackend",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "server",
+    "workspaceFolder": "/home",
+    "shutdownAction": "stopCompose",
+	"forwardPorts": [
+		8000
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bmewburn.vscode-intelephense-client",
+				"xdebug.php-debug",
+				"tomsaunders-code.workspace-explorer"
+			]
+		}
+	}
+  }

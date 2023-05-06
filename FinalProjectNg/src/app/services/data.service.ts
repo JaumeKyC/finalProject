@@ -9,11 +9,10 @@ import { environment } from "../../environments/environment";
 })
 export class DataService {
 
-  constructor(public http: HttpClient) { 
-    
-  }
+  constructor(public http: HttpClient) {}
   private apiKey = environment.API_KEY;
-  private shortUrl = 'https://www.alphavantage.co/query'
+  private shortUrl = 'https://www.alphavantage.co/query';
+  private getNewsUrl = 'http://localhost:8000/list/news';
   public getApiResponse(symbol: string): Observable <Main> { 
     /* WEEKLY https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=TSCO.LON&apikey=demo */
     const urlIntraday5Mins = `${this.shortUrl}?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=5min&apikey=${this.apiKey}`;
@@ -21,6 +20,10 @@ export class DataService {
    
   }
 
+  public getNewsResponse(): Observable <any>{
+   
+    return this.http.get(this.getNewsUrl);
+  }
 }
 
 
