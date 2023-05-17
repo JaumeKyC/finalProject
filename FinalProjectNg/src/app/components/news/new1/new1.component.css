@@ -1,6 +1,26 @@
-.card{
-    height: 30rem;
-    border-radius: 0%;
-    background-repeat: no-repeat;
-    background-size: 100%;
+.card {
+  height: 20rem;
+  border-radius: 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
+
+.newsLine {
+    width: 50%;
+    margin-bottom: 50px;
+    
+    margin: 1rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 1px solid;
+    opacity: .25;
+}
+
+.btn-success{
+background-color: #314832;
+border-color: #314832;
+}
+.btn-success:hover{
+background-color: #314832;
+border-color: #314832;
 }

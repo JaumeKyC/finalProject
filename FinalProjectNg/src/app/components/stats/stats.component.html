@@ -3,7 +3,22 @@
         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 colSettings" #myDivElement><canvas
                 #canvasId></canvas>
         </div>
-        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 p-5 d-flex center768">
+            <div class="row align-items-center centerInfoHorizontally">
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <p class="text-white">Price</p>
+                <p class="text-white statsNumbers">${{ bitcoinInfo.bitcoin['usd'].toLocaleString() }}</p>
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <p class="text-white">24H Volume</p>
+                <p class="text-white statsNumbers">${{ formatNumber(bitcoinInfo.bitcoin['usd_24h_vol']) }}</p>
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <p class="text-white">24H Change</p>
+                <p class="text-white statsNumbers">{{ formatNumber(bitcoinInfo.bitcoin['usd_24h_change']) }}%</p>
+              </div>
+            </div>
+          </div>
     </div>
 
 </div>

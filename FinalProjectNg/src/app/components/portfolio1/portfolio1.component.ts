@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Data } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
-import { MetaData, TimeSeries5Min } from 'src/app/interface/api-response';
 
 @Component({
   selector: 'app-portfolio1',
@@ -10,16 +9,7 @@ import { MetaData, TimeSeries5Min } from 'src/app/interface/api-response';
 })
 export class Portfolio1Component {
 
-  public objectValues = Object.values;  //It converts an object given to an array.
-  public allStockInfo: { [key: string]: TimeSeries5Min } = {};
-  public generalInfo: MetaData = {
-    "1. Information": "",
-    "2. Symbol": "",
-    "3. Last Refreshed": new Date(),
-    "4. Interval": "",
-    "5. Output Size": "",
-    "6. Time Zone": ""
-  };
+  public objectValues = Object.values;
 
   public msft: string = "MSFT";
   public lastPriceMSFT: string = "";
@@ -51,10 +41,8 @@ export class Portfolio1Component {
   public getResponseMSFT(): void {
 
     this.service.getApiResponse(`${this.msft}`).subscribe(response => {
-
-      /* this.allStockInfo = response['Time Series (5min)'];
-      this.generalInfo = response['Meta Data']; */
-      this.lastPriceMSFT = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
+     
+      this.lastPriceMSFT = response['Weekly Time Series'][Object.keys(response['Weekly Time Series'])[0]]['1. open'];
       this.winPercentageMSFT = ((parseFloat(this.lastPriceMSFT) - this.reportedPrices[0]) / this.reportedPrices[1]) * 100;
       this.winPercentageMSFT = parseFloat((((parseFloat(this.lastPriceMSFT) - this.reportedPrices[0]) / this.reportedPrices[1]) * 100).toFixed(2));
 
@@ -64,9 +52,7 @@ export class Portfolio1Component {
   public getResponseBRKB(): void {
     this.service.getApiResponse(`${this.brkB}`).subscribe(response => {
 
-      /*  this.allStockInfo = response['Time Series (5min)'];
-       this.generalInfo = response['Meta Data']; */
-      this.lastPriceBRKB = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
+      this.lastPriceBRKB = response['Weekly Time Series'][Object.keys(response['Weekly Time Series'])[0]]['1. open'];
       this.winPercentageBRKB = parseFloat((((parseFloat(this.lastPriceBRKB) - this.reportedPrices[1]) / this.reportedPrices[1]) * 100).toFixed(2));
 
       console.log(this.winPercentageBRKB);
@@ -76,9 +62,7 @@ export class Portfolio1Component {
   public getResponseCNI(): void {
     this.service.getApiResponse(`${this.cni}`).subscribe(response => {
 
-      /*  this.allStockInfo = response['Time Series (5min)'];
-       this.generalInfo = response['Meta Data']; */
-      this.lastPriceCNI = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
+      this.lastPriceCNI = response['Weekly Time Series'][Object.keys(response['Weekly Time Series'])[0]]['1. open'];
       this.winPercentageCNI = parseFloat((((parseFloat(this.lastPriceCNI) - this.reportedPrices[2]) / this.reportedPrices[1]) * 100).toFixed(2));
     
     })
@@ -87,9 +71,7 @@ export class Portfolio1Component {
   public getResponseWM(): void {
     this.service.getApiResponse(`${this.wm}`).subscribe(response => {
 
-      /*  this.allStockInfo = response['Time Series (5min)'];
-       this.generalInfo = response['Meta Data']; */
-      this.lastPriceWM = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
+      this.lastPriceWM = response['Weekly Time Series'][Object.keys(response['Weekly Time Series'])[0]]['1. open'];
       this.winPercentageWM = parseFloat((((parseFloat(this.lastPriceWM) - this.reportedPrices[3]) / this.reportedPrices[1]) * 100).toFixed(2));
 
     })
@@ -98,9 +80,7 @@ export class Portfolio1Component {
   public getResponseCAT(): void {
     this.service.getApiResponse(`${this.cat}`).subscribe(response => {
 
-      /* this.allStockInfo = response['Time Series (5min)'];
-      this.generalInfo = response['Meta Data']; */
-      this.lastPriceCAT = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['1. open'];
+      this.lastPriceCAT = response['Weekly Time Series'][Object.keys(response['Weekly Time Series'])[0]]['1. open'];
       this.winPercentageCAT = parseFloat((((parseFloat(this.lastPriceCAT) - this.reportedPrices[4]) / this.reportedPrices[1]) * 100).toFixed(2));
 
     })

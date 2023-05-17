@@ -3,6 +3,8 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import * as THREE from 'three';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { DataService } from 'src/app/services/data.service';
+import { Bitcoin } from 'src/app/interface/api-response';
 
 
 @Component({
@@ -26,8 +28,11 @@ export class StatsComponent {
   public ambientLight: THREE.AmbientLight;
   public detailLight: THREE.PointLight;
   public controls!: OrbitControls;
+  public bitcoinInfo: Bitcoin;
+/*   public service:any; */
 
-  constructor() {
+  constructor(public service:DataService) {
+ /*    this.service = DataService; */
     this.scene = new THREE.Scene();
 
      // Use STLLoader to load the local STL file
@@ -56,10 +61,21 @@ export class StatsComponent {
     //CAMERA
     this.camera = new THREE.PerspectiveCamera();
     this.camera.position.z = 0;
+
+    //BITCOIN
+    this.bitcoinInfo = {
+      bitcoin: {
+        usd: 0,
+        usd_24h_vol: 0,
+        usd_24h_change:0,
+      },
+    };
      
   }
 
   //RENDERER
+  
+
 
   ngAfterViewInit() {
     if (this.canvasElement) {
@@ -100,5 +116,28 @@ export class StatsComponent {
       }
       loop();
     }
+  }
+
+  //BITCOIN API CALL
+  
+
+  public getBitcoinInfo(): void{
+    this.service.getBitcoinResponse().subscribe(response => {
+      this.bitcoinInfo = response;
+      console.log(this.bitcoinInfo);
+    })
+  }
+  public formatNumber(value: number): string {
+    const suffixes = ['', '', 'M', 'B', 'T']; 
+    let suffixIndex = 0;
+    while (value >= 1000 && suffixIndex < suffixes.length - 1) {
+      value /= 1000;
+      suffixIndex++;
+    }
+    return value.toFixed(2) + suffixes[suffixIndex];
+  }
+
+  ngOnInit(){
+    this.getBitcoinInfo();
   }
 }

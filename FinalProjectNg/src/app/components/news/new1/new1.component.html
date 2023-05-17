@@ -1,5 +1,25 @@
-<div style="background-image: url({{new[3]}});" class="card border-0 p-5 img-fluid">
-    <h2>{{new[0]}}</h2>
-    <p>{{new[1]}}</p>
-    <a href="{{new[2]}}">Read more</a>
+<!-- <div style="background-image: url({{new.image}});" class="card border-0 p-5 img-fluid">
+    <h2>{{new.title}}</h2>
+    <p>{{new.description}}</p>
+    <a href="{{new.originalNewUrl}}">Read more</a>
+</div> -->
+<a class="card border-0 p-5 img-fluid changeColor" style="background-image: url({{new.image}});"></a>
+
+<div class="text-center">
+    <h3 class="font-700 p-2 pt-4">{{new.title}}</h3>
+ 
+        <hr class="newsLine mx-auto" size="2px">
+    
+    <p class="py-2 px-5">{{new.description}}</p>
+    <a class="" href="{{new.originalNewUrl}}"><button class="btn mb-5 btn-success" >Read More</button></a>
 </div>
+
+
+<!-- <div class="card bg-dark text-white img-fluid border-0">
+    <img class="card-img" src="{{new.image}}" alt="Card image">
+    <div class="card-img-overlay">
+      <h5 class="card-title">{{new.title}}</h5>
+      <p class="card-text">{{new.description}}</p>
+      <a href="{{new.originalNewUrl}}">Read more</a>
+    </div>
+  </div> -->

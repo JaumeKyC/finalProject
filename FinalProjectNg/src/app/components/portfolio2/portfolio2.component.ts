@@ -15,7 +15,7 @@ export class Portfolio2Component {
   }
 
 
-  public objectValues = Object.values;  //It converts an object given to an array.
+  public objectValues = Object.values;
   public allStockInfo: {[key: string]: TimeSeries5Min} = {};
   public generalInfo: MetaData = {
     "1. Information": "",
@@ -70,28 +70,7 @@ export class Portfolio2Component {
   }
 
 
-
-
-/* 
-  public getResponseIBM(): void {
-    this.service.getApiResponse(`${this.ibm}`).subscribe(response => {
-      this.allStockInfo = response['Time Series (5min)'];
-      //this.volume = response['Time Series (5min)'][Object.keys(response['Time Series (5min)'])[0]]['5. volume'];
-      
-    })
-  }
-  public getResponseMSFT(): void {
-    this.service.getApiResponse(`${this.msft}`).subscribe(response => {
-      this.allStockInfo = response['Time Series (5min)'];
-      this.generalInfo = response['Meta Data'];
-      
-    })
-  }
-   */
-
  public ngOnInit(): void {
-    /* this.getResponseIBM();
-    this.getResponseMSFT(); */
     this.calculatePercentage()
   }
  

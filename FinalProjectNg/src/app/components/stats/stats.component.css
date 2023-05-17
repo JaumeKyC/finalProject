@@ -15,7 +15,38 @@ canvas {
     max-height: 60vh;
   }
 
+.centerInfoHorizontally{
+text-align: none;
+width: 100%;
+}
+
+.center768{
+   justify-content: none;
+}
+
+@media (max-width: 992px) {
+    .centerInfoHorizontally{
+        text-align: center;
+        width: auto;
+        }
+}
+
   @media (max-width: 768px) {
+    .center768{
+        justify-content: center;
+    }
+    .centerInfoHorizontally{
+        text-align: center;
+        width: auto;
+        }
+    
+    .customC {
+        height: 80vh;
+        background-color: #314832;
+        margin-top: 10rem;
+        
+    }
+    
 
     .colSettings{
         padding: 0%;
@@ -28,4 +59,9 @@ canvas {
       }
     
 
+}
+
+
+.statsNumbers{
+    font-size: 2rem;
 }

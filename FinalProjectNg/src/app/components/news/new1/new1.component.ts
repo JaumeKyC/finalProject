@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class New1Component {
 
-  @Input() dataNews: string [][] = [];
+  @Input() news: any[] = [];
   @Input() new: any;
   @Input() key: number = 0;
 
